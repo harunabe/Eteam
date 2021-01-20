@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8" />
+  <link rel="stylesheet" href="sample.css">
+  <title>シューティング</title>
+</head>
+
+
+<body>
+  <div style="text-align:center" class="div">
+    <h1>シューティングゲーム</h1>
+    <p id="info">時間　　　得点　　</p>
+    <!-- キャンバスの設置 -->
+    <canvas id="canvas" width="400" height="300"></canvas><br>
+    <p class="instruction">左右キーで砲台を移動、スペースキーで玉を発射し出てくる的に当てるゲーム<br>30秒で終了、リロード、再読み込みで再開</p><br>
+    <p id="diftitle">難易度を押してスタート</p>
+    <span style="line-height:100%; font-size: 3em;">
+      <form name="form1 ">
+        <input type="button" value="易しい" id="es" onClick="easy();" style="font-size: 0.5em;">
+        <input type="button" value="普通" id="nm" onClick="normal();" style="font-size: 0.5em;">
+        <input type="button" value="難しい" id="df" onClick="difficult();" style="font-size: 0.5em;">
+      </form>
+    </span>
+    <p id="score"></p>
+    <p id="ranktitle">ランキング</p>
+    <p id="rank"></p>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+
+</html>
