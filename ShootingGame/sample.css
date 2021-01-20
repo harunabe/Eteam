@@ -3,7 +3,7 @@
 }
 
 #canvas {
-    background: url(images/background.jpg);
+    background: url(images/background1.jpg);
 }
 
 
@@ -18,8 +18,7 @@
 .div{
     z-index: 2;
     position: relative;
-    top: 0px;
-    left: 700px;
+
 }
 
 body{
@@ -47,4 +46,24 @@ h1{
 }
 #rank{
     color: white;
+    font-size:40px;
+}
+#time{
+    font-size: 50px;
+}
+#score1{
+    font-size: 50px;
+}
+#diftitle{
+    color: white;
+}
+#ranktitle{
+    color: white;
+}
+.ranking{
+    position: absolute;
+    top:120px;
+    right:0px;
+    float: right;
+    
 }

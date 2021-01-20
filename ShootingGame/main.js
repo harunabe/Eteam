@@ -21,12 +21,17 @@ for (i = 0; i < array.length; i++) {
     console.log(array[i]);
 }
 
-array.sort(function(a,b){
-    if(a>b) return -1;
-    if(a<b) return 1;
+array.sort(function (a, b) {    //配列の数値を降順にソートする
+    if (a > b) return -1;
+    if (a < b) return 1;
     return 0;
-});                                   //配列の数値を降順にソートする
-document.getElementById("rank").innerHTML = "第1位:" + array[0] + "<br>第2位:" + array[1] + "<br>第3位:" + array[2] + "<br>"
+});                                   
+var first = ('000' + array[0]).slice(3);
+var second = ('000' + array[1]).slice(3);
+var third = ('000' + array[2]).slice(3);
+document.getElementById("1st").innerHTML = first;
+document.getElementById("2nd").innerHTML = second;
+document.getElementById("3rd").innerHTML = third;
 var topscore = array[0];
 
 
@@ -51,9 +56,7 @@ var matoRadius = 30;
 var matoX = 60;
 var matoY = 60;
 
-//TimeやScoreの画像
-//var img = document.getElementById("imase_place");
-//img.src = "images/emoi.jpg";
+
 
 
 
@@ -78,6 +81,7 @@ function keyDown(e) {
     }
     else if (e.keyCode == 32) {                         //spaceキーのkeyCodeが32
         spacePressed = true;
+        e.preventDefault();
     }
 }
 
@@ -135,7 +139,9 @@ function difficult() {                                                      //�
     point = 0;                              //得点
     timer1 = setInterval(countdwn, 1000);   //1秒ごとにcountdown関数を実行
 }
-
+function kousinn(){
+    location.reload();
+}
 
 
 function countdwn() {
@@ -144,6 +150,7 @@ function countdwn() {
         clearInterval(timer1);              //setIntervalを解除する
         stopflg = true;
         sessionStorage.setItem("lastScore", point);
+        
         //pointによる評価の表示
         if (point > 0 && point < 15) {
             window.alert("まだまだだね。。。")
@@ -153,7 +160,7 @@ function countdwn() {
             window.alert("すばらしい！！！！！！！！！！")
         }
         //ハイスコアと表示
-        if(point>topscore){
+        if (point > topscore) {
             console.log(array[0]);
             window.alert("New Recode");
         }
@@ -218,13 +225,14 @@ function draw1() {
         }
         if (spacePressed) {
             spacePressed = false;
+
         }
     } else {
         if (spacePressed) {
             tamaX = batteryX2 + tamaRadius;
             tamaY = cvs.height - batteryHeight2 - tamaRadius;
             drawball();
-            tamaMoving = true;              
+            tamaMoving = true;
             spacePressed = false;
         }
     }
@@ -246,8 +254,8 @@ function draw2() {
     if (stopflg) {                                         //時間切れで処理が終わる
         return;
     } else {
-        document.getElementById("time").innerHTML =timeup1;      //得点・時間欄をHTMLへ記述
-        document.getElementById("score1").innerHTML =point + "<br>";
+        document.getElementById("time").innerHTML = timeup1;      //得点・時間欄をHTMLへ記述
+        document.getElementById("score1").innerHTML = point + "<br>";
     }
 
     if (tamaMoving) {
@@ -306,7 +314,7 @@ function draw3() {
         return;
     } else {
         document.getElementById("time").innerHTML = timeup1;      //得点・時間欄をHTMLへ記述
-        document.getElementById("score1").innerHTML = point + "<br>"; 
+        document.getElementById("score1").innerHTML = point + "<br>";
     }
 
     if (tamaMoving) {
@@ -395,3 +403,4 @@ function getRandomInt(m) {
 }
 
 var array = [3];
+

@@ -8,26 +8,33 @@
 </head>
 
 
-<body>
+<body style="width : 1662px">
   <div style="text-align:center" class="div">
-    <h1 >
+    <h1>
       <img src="images/3D.jpg">
     </h1>
-    <p id="info"><img src="images/emoi.jpg"><span id="time"></span><img src="images/emoi1.jpg"><span id="score1"></span></p>
+    <p id="info"><img src="images/emoi.jpg"><span id="time"></span><img src="images/emoi1.jpg"><span id="score1"></span>
+    </p>
     <!-- キャンバスの設置 -->
     <canvas id="canvas" width="400" height="300"></canvas><br>
     <p class="instruction">左右キーで砲台を移動、スペースキーで玉を発射し出てくる的に当てるゲーム<br>30秒で終了、リロード、再読み込みで再開</p><br>
-
+    <p id="diftitle">難易度を押してスタート</p>
     <span style="line-height:200%; font-size: 3em;">
       <form name="form1 ">
-        <input type="button" value="簡単" id="es" onClick="easy();" style="font-size: 0.5em;">
-        <input type="button" value="普通" id="nm" onClick="normal();" style="font-size: 0.5em;">
-        <input type="button" value="難しい" id="df" onClick="difficult();" style="font-size: 0.5em;">
+        <input type="image" src="images/EASY.jpg" id="es" onClick="easy();" style="font-size: 0.5em;">
+        <input type="image" src="images/NORMAL.jpg" id="nm" onClick="normal();" style="font-size: 0.5em;">
+        <input type="image" src="images/HARD.jpg" id="df" onClick="difficult();" style="font-size: 0.5em;">
       </form>
     </span>
     <p id="score">前回の得点</p>
-    <p id="rank"></p>
+    <input type="button" value="ここを押すとリロードします。" onclick="kousinn()" id="reload">
   </div>
+  <div class="ranking" style="text-align: center;">
+    <img src="images/RANKING.jpg"></img>
+    <p id="rank"><img src="images/1ST.jpg"><span id="1st"></span><br><img src="images/2ND.jpg"><span id="2nd"></span><br><img src="images/3RD.jpg"><span id="3rd"></span><br></p>
+    
+  </div>
+  
 
   <script src="main.js"></script>
 </body>
