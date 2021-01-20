@@ -1,0 +1,50 @@
+#score {
+    text-align: center;
+}
+
+#canvas {
+    background: url(images/background.jpg);
+}
+
+
+.back {
+    height  : 100%;
+    width   : 100%;
+    position: relative;
+    z-index: 1;
+}
+
+
+.div{
+    z-index: 2;
+    position: relative;
+    top: 0px;
+    left: 700px;
+}
+
+body{
+    position: absolute;
+    background: url(images/universe2.png);
+    background-position: center center;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+h1{
+    color: white;
+}
+
+#info{
+    color: white;
+}
+
+#score{
+    color: white;
+}
+
+.instruction{
+    color: white;
+}
+#rank{
+    color: white;
+}
